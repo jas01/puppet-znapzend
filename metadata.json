@@ -8,5 +8,9 @@
   "project_page": "https://github.com/caius/puppet-znapzend",
   "issues_url": "https://github.com/caius/puppet-znapzend/issues",
   "dependencies": [
+    {
+      "name": "caius/zfs_property",
+      "version_requirement": ">= 0.1.2"
+    }
   ]
 }
