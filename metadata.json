@@ -1,6 +1,6 @@
 {
   "name": "caius-znapzend",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "caius",
   "summary": "Manages znapzend for ZFS snapshotting",
   "license": "Apache-2.0",
