@@ -40,7 +40,7 @@ define znapzend::dataset_config(
 
     "${dataset}-org.znapzend:mbuffer":
       property => 'org.znapzend:mbuffer',
-      value    => '/opt/tool/bin/mbuffer';
+      value    => $::znapzend::mbuffer_path;
 
     "${dataset}-org.znapzend:recursive":
       property => 'org.znapzend:recursive',

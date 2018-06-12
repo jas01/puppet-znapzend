@@ -2,7 +2,11 @@
 #
 # http://www.znapzend.org
 #
-class znapzend {
+class znapzend (
+  String $service                    = $::znapzend::params::service,
+  Stdlib::Absolutepath $mbuffer_path = $::znapzend::params::mbuffer_path
+) inherits znapzend::params
+{
 
   include znapzend::install, znapzend::config, znapzend::service
 

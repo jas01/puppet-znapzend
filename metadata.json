@@ -11,6 +11,10 @@
     {
       "name": "caius/zfs_property",
       "version_requirement": ">= 0.1.2"
+    },
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 4.13.1 < 5.0.0"
     }
   ]
 }

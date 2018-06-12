@@ -1,8 +1,9 @@
 # @private Manages znapzend service
 class znapzend::service {
 
-  service { 'svc:/pkgsrc/znapzend:default':
+  service { $::znapzend::service :
     ensure => 'running',
+    enable => true,
   }
 
 }
