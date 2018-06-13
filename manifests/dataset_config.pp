@@ -51,6 +51,7 @@ define znapzend::dataset_config(
   Enum['On','Off','on','off'] $recursive = 'off',
   String $mbuffer_size = '1G',
   String $mbuffer_path = $::znapzend::mbuffer_path,
+  Optional[Boolean] $use_mbuffer = $::znapzend::use_mbuffer,
   Optional[String] $pre_snap_command = 'off',
   Optional[String] $post_snap_command = 'off',
   Optional[String] $tsformat = $::znapzend::tsformat,
@@ -84,7 +85,18 @@ define znapzend::dataset_config(
     $enabled = 'off'
   }
 
+  # Recursive or not
   $_recursive = downcase($recursive)
+
+  # mbuffer or not
+  if $use_mbuffer
+  {
+    $_mbuffer_path = $mbuffer_path
+  }
+  else
+  {
+    $_mbuffer_path = 'off'
+  }
 
   # Main properties
 
@@ -111,7 +123,7 @@ define znapzend::dataset_config(
 
     "${dataset}-org.znapzend:mbuffer":
       property => 'org.znapzend:mbuffer',
-      value    => $::znapzend::mbuffer_path;
+      value    => $_mbuffer_path;
 
     "${dataset}-org.znapzend:recursive":
       property => 'org.znapzend:recursive',
