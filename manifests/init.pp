@@ -4,7 +4,8 @@
 #
 class znapzend (
   String $service                    = $::znapzend::params::service,
-  Stdlib::Absolutepath $mbuffer_path = $::znapzend::params::mbuffer_path
+  Stdlib::Absolutepath $mbuffer_path = $::znapzend::params::mbuffer_path,
+  Optional[String] $tsformat         = '%Y-%m-%dT%H:%M:%SZ',
 ) inherits znapzend::params
 {
 
